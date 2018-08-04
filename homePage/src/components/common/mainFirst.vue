@@ -17,18 +17,18 @@
                 </div>
             </div>
             <!-- 四个 -->
-            <mainFirst1 v-show="isshow"></mainFirst1>
-            <mainFirst2 v-show="isshow1"></mainFirst2>
-            <mainFirst3 v-show="isshow2"></mainFirst3>
-            <mainFirst4 v-show="isshow3"></mainFirst4> 
+            <introduction v-show="isshow"></introduction>
+            <advantage v-show="isshow1"></advantage>
+            <team v-show="isshow2"></team>
+            <cooperation v-show="isshow3"></cooperation> 
         </div>    
 </template>
 <script>
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import mainFirst1 from '@/components/common/mainFirst1'
-import mainFirst2 from '@/components/common/mainFirst2'
-import mainFirst3 from '@/components/common/mainFirst3'
-import mainFirst4 from '@/components/common/mainFirst4'
+import introduction from '@/components/common/introduction'
+import advantage from '@/components/common/advantage'
+import team from '@/components/common/team'
+import cooperation from '@/components/common/cooperation'
 export default {
  data () {
     return {
@@ -65,10 +65,10 @@ export default {
   components: {
     swiper,
     swiperSlide,
-    mainFirst1,
-    mainFirst2,
-    mainFirst3,
-    mainFirst4
+    introduction,
+    advantage,
+    team,
+    cooperation
   },
   methods: {
       changedd:function(index){

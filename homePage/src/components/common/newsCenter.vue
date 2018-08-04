@@ -3,7 +3,7 @@
         <div class='main3-title'>
              <ul>
                  <li><div id="title-item"></div>INEWS</li>
-                 <li><span id="title-i">新闻中心</span>&nbsp &nbsp &nbsp<span>03</span></li>
+                 <li><span id="title-i">{{titleI}}</span>&nbsp &nbsp &nbsp<span>03</span></li>
              </ul>
          </div>
          <div class="main3-content">
@@ -17,8 +17,8 @@
                  <el-col :span='12'>
                      <div class="two-right">
                          2018-7-20 &nbsp 05:41:48<br/>
-                         <p id="news-title"><a href="#">建立首个无感支付停车场示范</a></p>
-                         在柳州本地建设首个无感支付停车场示范点，加快实行构建智慧型城市级停车诱导系统，提高便民
+                         <p id="news-title"><a href="#">{{establish}}</a></p>
+                         {{contentEst}}
                          <p id="news-more"><i class="icon iconfont icon-changjiantou-copy"></i><a href="#">查看更多</a></p>
                      </div>
                  </el-col>
@@ -42,6 +42,9 @@
 export default {
     data(){
         return{
+            titleI:'新闻中心',
+            establish:'建立首个无感支付停车场示范',
+            contentEst:'在柳州本地建设首个无感支付停车场示范点，加快实行构建智慧型城市级停车诱导系统，提高便民',
             isActive:false,
             newsContents:[{
                 newsTitle:'如何看待柳州某物业“扣车”收费的行为？',

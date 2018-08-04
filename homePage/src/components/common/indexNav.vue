@@ -14,8 +14,8 @@
                 </div>
                 <div class="header-number">
                     <span>
-                        全国服务热线:
-                        <span class='phone-number'>0772-2999-255</span>
+                        {{Hotline}}
+                        <span class='phone-number'>{{HotlinePhone}}</span>
                     </span>
                 </div>
             </el-col>
@@ -26,12 +26,12 @@
         <div class="headerNav">
             <el-breadcrumb class='header-nav' separator="|">
                 <el-breadcrumb-item></el-breadcrumb-item>
-                <el-breadcrumb-item :to="{ path: '/' }" class="el-hover" ><a >卡莱首页</a></el-breadcrumb-item>
-                <el-breadcrumb-item  class="el-hover"><a  @click="aboutUs()">关于我们</a></el-breadcrumb-item>
-                <el-breadcrumb-item  class="el-hover"><a  @click="serviceProject()">服务项目</a></el-breadcrumb-item>
-                <el-breadcrumb-item class="el-hover"><a  @click="newsCenter()">新闻中心</a></el-breadcrumb-item>
-                <el-breadcrumb-item class="el-hover"><a @click="serviceCase()">客户案例</a></el-breadcrumb-item>
-                <el-breadcrumb-item class="el-hover"><a @click="contactUs()">联系我们</a></el-breadcrumb-item>
+                <el-breadcrumb-item :to="{ path: '/' }" class="el-hover" ><a >{{homePage}}</a></el-breadcrumb-item>
+                <el-breadcrumb-item  class="el-hover"><a  @click="aboutUs()">{{aboutUs}}</a></el-breadcrumb-item>
+                <el-breadcrumb-item  class="el-hover"><a  @click="serviceProject()">{{serviceProject}}</a></el-breadcrumb-item>
+                <el-breadcrumb-item class="el-hover"><a  @click="newsCenter()">{{newsCenter}}</a></el-breadcrumb-item>
+                <el-breadcrumb-item class="el-hover"><a @click="serviceCase()">{{serviceCase}}</a></el-breadcrumb-item>
+                <el-breadcrumb-item class="el-hover"><a @click="contactUs()">{{contactUs}}</a></el-breadcrumb-item>
                 <el-breadcrumb-item></el-breadcrumb-item>     
             </el-breadcrumb>
         </div>        
@@ -41,10 +41,10 @@
         <el-row>
             <el-col :span="14">
                 <div class="bottom-left">
-                    <pre>52嗨停</pre>
-                    <p>一款停洗车神器</p>
+                    <pre>{{hiStop}}</pre>
+                    <p>{{artifact}}</p>
                     <el-input placeholder="站内搜索" class="input-with">
-                        <el-button type="success"  slot="append">搜索<i class="el-icon-search el-icon--right"></i></el-button>
+                        <el-button type="success"  slot="append">{{searchs}}<i class="el-icon-search el-icon--right"></i></el-button>
                     </el-input>
                 </div>
             </el-col>
@@ -63,13 +63,13 @@
                         <mainFirst></mainFirst>
                     <el-header  height='600'>
                        <!-- 第二层 -->
-                      <main2First></main2First> 
+                      <services></services> 
                     </el-header>
                     <el-main height='600'>
-                     <main3First></main3First>
+                     <newsCenter></newsCenter>
                     </el-main>
                     <el-footer height='600'>
-                      <main4First></main4First>
+                      <ServiceCase></ServiceCase>
                     </el-footer>
                   </el-container>
         </el-main>
@@ -81,16 +81,31 @@
 </template>
 <script>
 import mainFirst from '@/components/common/mainFirst'
-import main2First from '@/components/common/main2First'
-import main3First from '@/components/common/main3First'
-import main4First from '@/components/common/main4First'
+import services from '@/components/common/services'
+import newsCenter from '@/components/common/newsCenter'
+import ServiceCase from '@/components/common/ServiceCase'
 import mainFooter from '@/components/common/mainFooter'
 export default {
+    data(){
+        return{
+            Hotline:'全国服务热线:',
+            HotlinePhone:'0772-2999-255',
+            homePage:'卡莱首页',
+            aboutUs:'关于我们',
+            serviceProject:'服务项目',
+            newsCenter:'新闻中心',
+            serviceCase:'服务案例',
+            contactUs:'联系我们',
+            hiStop:'52嗨停',
+            artifact:'一款停洗车神器',
+            searchs:'搜索'
+        }
+    },
     components:{
         mainFirst,
-        main2First,
-        main3First,
-        main4First,
+        services,
+        newsCenter,
+        ServiceCase,
         mainFooter,
     },
     mounted () {//给window添加一个滚动滚动监听事件

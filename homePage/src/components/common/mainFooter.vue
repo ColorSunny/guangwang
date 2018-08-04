@@ -25,9 +25,9 @@
                                   <li> 
                                       <img src="http://pbs51uiv3.bkt.clouddn.com/logo_bslogo@2x.png">
                                   </li>
-                                  <li>Phone:0772-2999255</li>
-                                  <li>E-mail:carlife52@163.com</li>
-                                  <li>Address:柳州市温州商贸城一区3A-1</li>
+                                  <li>{{phoneNumber}}</li>
+                                  <li>{{emailAddress}}</li>
+                                  <li>{{address}}</li>
                               </ul>
                           </div>
                       </el-col>
@@ -35,12 +35,7 @@
                           <div class="navigation">
                               <ul>
                                   <li id="nav">页面导航</li>
-                                  <li>首页</li>
-                                  <li>关于我们</li>
-                                  <li>服务项目</li>
-                                  <li>客户案例</li>
-                                  <li>新闻资讯</li>
-                                  <li>联系我们</li>
+                                  <li v-for="titleLi in titleLis">{{titleLi.title}}</li>
                               </ul>
                           </div>
                       </el-col>
@@ -56,9 +51,7 @@
             </el-header>
             <el-footer height='100' class="footer-bottom">
                   <el-row>
-                      <el-col :span='12'>
-                          ©备案号:桂Icp备17003197号
-                      </el-col> 
+                      <el-col :span='12'>{{recordNumber}}</el-col> 
                       <el-col :span='12'>
                           <i class="icon iconfont icon-qie"></i>
                           <i class="icon iconfont icon-birdxiaoniao"></i>
@@ -75,6 +68,11 @@
 export default {
     data(){
         return{
+            phoneNumber:'Phone:0772-2999255',
+            emailAddress:'E-mail:carlife52@163.com',
+            address:'Address:柳州市温州商贸城一区3A-1',
+            recordNumber:'©备案号:桂Icp备17003197号',
+            titleLis:[{title:'首页'},{title:'关于我们'},{title:'服务项目'},{title:'客户案例'},{title:'新闻资讯'},{title:'联系我们'}],
             apiUrl: 'http://appwap.52carlife.com/advice',
             advices:{
                 name:'',
@@ -141,10 +139,7 @@ export default {
 <style>
 *{
     list-style: none;
-    /* text-align: center; */
 }
-/* @media screen and (max-width: 1200px){   
-} */
 .footer-content{
     width: 100%;
     background-color: #409EFF;

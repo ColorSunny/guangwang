@@ -3,7 +3,7 @@
          <div class='main4-title'>
              <ul>
                  <li><div id="title-item"></div>SERVE</li>
-                 <li><span id="title-i">服务案例</span>&nbsp &nbsp &nbsp<span>04</span></li>
+                 <li><span id="title-i">{{titleSer}}</span>&nbsp &nbsp &nbsp<span>04</span></li>
              </ul>
          </div>
          <div class="main4-content">
@@ -22,6 +22,7 @@
 export default {
     data () {
     return {
+        titleSer:'服务案例',
         isActive:false,
         titles:[{
             title:'商业综合体',

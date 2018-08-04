@@ -3,7 +3,7 @@
          <div class='main2-title'>
              <ul>
                  <li><div id="title-item"></div>ITEM</li>
-                 <li><span id="title-i">服务项目</span>&nbsp &nbsp &nbsp<span>02</span></li>
+                 <li><span id="title-i">{{titleService}}</span>&nbsp &nbsp &nbsp<span>02</span></li>
              </ul>
          </div>
          <div class="main2-content">
@@ -11,15 +11,13 @@
                     <el-col :span="10">
                         <div class="main2-left">
                             <div class="left-title">
-                            <h2>52嗨停 应用</h2>
-                            <span>一款停洗车神器</span>
+                            <h2>{{carLife}}</h2>
+                            <span>{{application}}</span>
                             </div>
                             <img src="http://pbs51uiv3.bkt.clouddn.com/pic_xcx@2x.png">
                             <div class="left-content">
-                                <p>
-                                    以移动互联网为平台，立足柳州，面向全国，网罗全国2亿车主，
-                                    深度开发汽车后市场O2O模式，为车主提供更便捷，安全智能化的车生活体验。</p>
-                                    <span>实时更新空位数量，一键导航、在线预约车位、无感支付、闲置时段车位共享。</span>   
+                                <p>{{contentFirst}}</p>
+                                    <span>{{contentSecond}}</span>   
                             </div>
                         </div>
                     </el-col>
@@ -39,7 +37,15 @@
 </template>
 <script>
 export default {
-    
+    data(){
+        return{
+            titleService:'服务项目',
+            carLife:'52嗨停 应用',
+            application:'一款停洗车神器',
+            contentFirst:' 以移动互联网为平台，立足柳州，面向全国，网罗全国2亿车主，深度开发汽车后市场O2O模式，为车主提供更便捷，安全智能化的车生活体验。',
+            contentSecond:'实时更新空位数量，一键导航、在线预约车位、无感支付、闲置时段车位共享。'
+        }
+    }
 }
 </script>
 <style scoped>

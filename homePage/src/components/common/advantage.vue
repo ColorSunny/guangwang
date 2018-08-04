@@ -10,9 +10,7 @@
                                 </div>
                                 <ul>
                                     <li id="title"><a href="#">高效快捷</a></li>
-                                    <li>目标与价值观</li>
-                                    <li>团队文化的建设</li>
-                                    <li>规范标准</li>
+                                    <li v-for="item in efficient">{{item.title}}</li>
                                 </ul>
                             </div>
                         </el-col>
@@ -23,9 +21,7 @@
                                 </div>
                                 <ul>
                                     <li id="title"><a href="#">大数据平台</a></li>
-                                    <li>提升业务价值</li>
-                                    <li>无限的数据潜力</li>
-                                    <li>机器学习创新</li>
+                                    <li v-for="item in bigData">{{item.title}}</li>
                                 </ul>
                             </div>
                         </el-col>
@@ -36,9 +32,7 @@
                                 </div>
                                 <ul>
                                     <li id="title"><a href="#">整合多方资源</a></li>
-                                    <li>说明文字</li>
-                                    <li>说明文字</li>
-                                    <li>说明文字</li>
+                                    <li v-for="item in resources">{{item.title}}</li>
                                 </ul>
                             </div>
                         </el-col>
@@ -49,9 +43,9 @@
                                 </div>
                                 <ul>
                                     <li id="title"><a href="#">专业技术服务</a></li>
-                                    <li>说明文字</li>
-                                    <li>说明文字</li>
-                                    <li>说明文字</li>
+                                    <li>Android/Ios</li>
+                                    <li>小程序/Html5</li>
+                                    <li>平面设计/品牌推广</li>
                                 </ul>
                             </div>
                         </el-col>
@@ -61,7 +55,14 @@
 </template>
 <script>
 export default {
-    
+    data(){
+        return{
+            efficient:[{title:'目标与价值观'},{title:'团队文化及建设'},{title:'规范标准'}],
+            bigData:[{title:'提升业务价值'},{title:'无限的数据潜力'},{title:'机器学习创新'}],
+            resources:[{title:'社会资源'},{title:'人力资源'},{title:'财力资源'}],
+            services:[{title:'Android/Ios'},{title:'小程序/Html5'},{title:'平面设计/品牌推广'}]
+        }
+    }
 }
 </script>
 <style scoped>
@@ -137,9 +138,9 @@ export default {
 }
 .first2-bottom ul{
     margin-top: 45px;
-    width: 120px;
+    width: 9vw;
     text-align: center;
-    margin-left: 41px;
+    margin-left: 2vw;
 }
 .first2-bottom ul li{
     line-height: 30px;
@@ -152,9 +153,6 @@ export default {
    padding-top: 30px;
    font-size: 32px;
 }
-/* .first-bottom .icon:hover{
-    color: #fff ;
-} */
 .first2-bottom a:hover {
     color: rgb(241, 82, 175);
 }
